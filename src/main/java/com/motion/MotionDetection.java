@@ -5,7 +5,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -53,6 +52,7 @@ public class MotionDetection extends Thread {
 		JButton closeButton = new JButton("Close Server");
 
 		closeButton.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 				System.out.println("Stopped Server");
@@ -135,13 +135,13 @@ public class MotionDetection extends Thread {
 						if(detectionFrames.size()>0) {
 							BufferedImage save = detectionFrames.remove(0);
 							// Saving the image with a different name
-							File ouptut = new File("D:/Images/Capture/sample" + System.currentTimeMillis() + ".jpg");
-							try {
-								ImageIO.write(save, "jpg", ouptut);
-							} catch (IOException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							}
+//							File ouptut = new File("D:/Images/Capture/sample" + System.currentTimeMillis() + ".jpg");
+//							try {
+//								ImageIO.write(save, "jpg", ouptut);
+//							} catch (IOException e1) {
+//								// TODO Auto-generated catch block
+//								e1.printStackTrace();
+//							}
 
 							System.out.println("image Saved");
 
